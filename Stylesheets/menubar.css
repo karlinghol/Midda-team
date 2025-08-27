@@ -1,0 +1,67 @@
+.menybar {
+    background-color: #3ab795;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+}
+
+.menybar-logo {
+    width: fit-content;
+    height: 100%;
+    padding-left: 60px;
+    display: flex;
+}
+
+.menybar-nav ul {
+    list-style: none;
+}
+
+.menybar-nav ul li {
+    float: left;
+    position: relative;
+}
+
+.menybar-nav ul li a {
+    display: block;
+    line-height: 80px;
+    padding: 0px 14px;
+    text-decoration: none;
+}
+
+.menybar-nav ul li ul {
+    display: none;
+    position: absolute;
+    background-color: #3ab795;
+    padding: 10px;
+    border-radius: 0 0 4px 4px;
+    border: 1px solid rgb(255, 255, 255);
+    border-top: none;
+    z-index: 1000;
+}
+
+.menybar-nav ul li:hover ul{
+    display: block;
+}
+
+.menybar-nav ul li ul li {
+    width: 160px;
+}
+
+.menybar-nav ul li ul li a {
+    padding: 12px 14px;
+    line-height: normal;
+}
+
+.menybar-nav ul li ul li a:hover {
+    background-color: #42cea9;
+}
+
+a {
+    font-family: "Gill Sans MT", sans-serif;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+a:hover, a:focus {
+    cursor: pointer;
+}
