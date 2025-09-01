@@ -1,0 +1,229 @@
+body {
+    background-color: #f9f9f9;
+    font-family: "Poppins", sans-serif;
+    color: #333;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background-color: #ffffff;
+    margin: 20px 200px 0 200px;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08)
+}
+
+.container img {
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+    border-radius: 16px 16px 0 0;
+    border-bottom: 3px solid #e67e22;
+}
+
+.upper-row, .bottom-row {
+    display: grid;
+    grid-template-columns: repeat(4, 280px);
+    grid-auto-rows: 23em;
+    gap: 20px;
+    justify-content: center;
+}
+
+.bottom-row {
+    grid-template-columns: repeat(3, 280px);
+}
+
+.calender_item {
+    background-color: #ffffff;
+    border-radius: 16px;
+    flex: 0 0 280px;
+    max-width: 280px;
+    height: 23em;
+    display: flex;
+    flex-direction: column;
+    text-indent: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    transition: 0.3s ease;
+    position: relative;
+}
+
+.calender_item h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 8px 0 2px 8px;
+}
+
+.calender_item p {
+    margin: 0 0 8px 8px;
+    font-size: 0.95rem;
+    color: #666;
+}
+
+.day {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 8px 0;
+    background-color: #f5f5f5;
+    border-radius: 0 0 16px 16px;
+
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: #444;
+    text-align: left;
+}
+
+.calender_item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+    cursor: pointer;
+}
+
+.remove-item {
+    width: 50px;
+    aspect-ratio: 1;
+    background-image: url('../Icons/remove.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    position: absolute;
+    top: -14px;
+    right: -14px;
+    background-color: transparent;
+    border: none;
+
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.calender_item:hover .remove-item {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+    pointer-events: auto;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.confirm-delete {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 200px;
+    transform: translate(-50%, -50%);
+    background-color: #38526d;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    color: white;
+    font-family: "Poppins", sans-serif;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    z-index: 1000;
+    
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.confirm-delete.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.confirm-delete h2 {
+    padding: 20px;
+    line-height: 1.3;
+}
+
+.confirm-cancel {
+    background-color: #35495f;
+    padding: 12px 16px;
+    border-radius: 0 0 16px 16px;
+}
+
+.confirm-cancel button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.confirm-cancel button.confirm-btn {
+    background-color: #e67e22;
+    color: white;
+}
+
+.confirm-cancel button.cancel-btn {
+    background-color: transparent;
+    color: white;
+    border: 1px solid #e67e22;
+}
+
+#empty {
+    background-color: #ebebeb;
+    position: relative;
+
+    flex: 1 1 280px;
+    max-width: 280px;
+    height: 23em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add_icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 60px;
+    background-color: #cacaca;
+    border-radius: 4px;
+    transform: translate(-50%, -50%);
+}
+
+.add_icon::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 10px;
+    background-color: #cacaca;
+    border-radius: 4px;
+}
