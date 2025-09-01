@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../Styles/menubar.css">
     <link rel="stylesheet" href="../Styles/main.css">
+    <link rel="stylesheet" href="../Styles/searchbar.css">
     <script src="../JS/remove_food.js" defer></script>
     <title>MIDDA</title>
 </head>
@@ -21,67 +22,68 @@
         </div>
     </header>
 
-    <div class="container">
-        <div class="upper-row">
+    <div class="container"> <!-- The start of the calendar container-->
+        <div class="upper-row"> <!-- The start of the upper row of calendar items-->
             <div class = "calender_item">
-                <button class="remove-item" onclick="removeFoodItem(event)"></button>
+                <button class="remove-item" onclick="removeFoodItem(event)"></button> <!-- All remove buttons activate the same function inside of the remove_food.js file -->
                 <img src="../Images/kylling_burger.jpg" alt="Kyllingburger">
                 <h2>Kyllingburger</h2>
                 <p>129kr</p>
                 <div class="day">
-                    <p>Monday</p>
+                    <p>Mandag</p>
                 </div>
             </div>
             <div class = "calender_item">
                 <button class="remove-item" onclick="removeFoodItem(event)"></button>
                 <img src="../Images/hamburger.jpg" alt="Hamburger">
                 <div class="day">
-                    <p>Tuesday</p>
+                    <p>Tirsdag</p>
                 </div>
             </div>
             <div class = "calender_item">
                 <button class="remove-item" onclick="removeFoodItem(event)"></button>
                 <img src="../Images/kabuli_pulao.jpg" alt="Kabuli Pulao">
                 <div class="day">
-                    <p>Wednesday</p>
+                    <p>Onsdag</p>
                 </div>
             </div>
             <div class = "calender_item">
                 <button class="remove-item" onclick="removeFoodItem(event)"></button>
                 <img src="../Images/kebab_i_pita.jpg" alt="Kebab i Pita">
                 <div class="day">
-                        <p>Thursday</p>
+                        <p>Torsdag</p>
                 </div>
             </div>
-        </div>
-        <div class ="bottom-row">
+        </div> <!-- The end of the upper row of calendar items-->
+
+        <div class ="bottom-row"> <!-- The start of the bottom row of calendar items-->
             <div class = "calender_item">
                 <button class="remove-item" onclick="removeFoodItem(event)"></button>
                 <img src="../Images/laks_i_ovn.jpg" alt="Laks i Ovn">
                 <div class="day">
-                        <p>Friday</p>
+                        <p>Fredag</p>
                 </div>
             </div>
             <div class = "calender_item">
                 <button class="remove-item" onclick="removeFoodItem(event)"></button>
                 <img src="../Images/lasagne.jpg" alt="Lasagne">
                 <div class="day">
-                        <p>Saturday</p>
+                        <p>Lørdag</p>
                 </div>
             </div>
             <div class = "calender_item">
                 <button class="remove-item" onclick="removeFoodItem(event)"></button>
                 <img src="../Images/spaghetti_carbonara.jpeg" alt="Spaghetti Carbonara">
                 <div class="day">
-                        <p>Sunday</p>
+                        <p>Søndag</p>
                 </div>
             </div>
-        </div>
-    </div>
+        </div> <!-- The end of the bottom row of calendar items-->
+    </div> <!-- The end of the calendar container-->
 
     <div class="overlay" id="overlay"></div>
     
-    <div class="confirm-delete" id="confirm-delete">
+    <div class="confirm-delete" id="confirm-delete"> <!-- A confirmation pop up that appears when the user want's to remove a recipe from the calendar -->
         <h2>Are you sure you want to remove this recipe from your calendar?</h2>
         <div class="confirm-cancel">
             <button class="confirm-btn">Yes</button>
@@ -89,8 +91,28 @@
         </div>
     </div>
 
-    <div class="searchbar">
-        <input type="text" placeholder="Search...">
+    <div class="search-filter">
+        <div class="filter-recipes" id="closed">
+            <button>
+                <span>Type rett</span>
+                <img src="../Icons/expand-arrow.png" alt="Arrow Down">
+            </button>
+        </div>
+        <div class="search-show-recipes">
+            <div class="search-bar">
+                <input type="text" placeholder="Søk i oppskrifter">
+                <div class="search-icon">
+                    <button>
+                        <img src="../Icons/search.svg" alt="Search Icon" width="30px">
+                    </button>
+                </div>
+            </div>
+
+            <div class="catalog-tabs">
+                <button>Forslag</button>
+                <button>Nylige oppskrifter</button>
+            </div>
+        </div>
     </div>
 </body>
 </html>
