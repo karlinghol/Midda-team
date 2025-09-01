@@ -2,9 +2,8 @@ button {
     font-family: "Gill Sans MT", sans-serif;;
 }
 
-.search-filter {
+.search-filter-container {
     display: flex;
-    /* align-items: center; */
     justify-content: space-between;
     background-color: #ffffff;
     margin: 20px 200px 0 200px;
@@ -14,9 +13,20 @@ button {
     height: 1000px;
 }
 
-.filter-recipes {
-    background-color: red;
+.filter-container {
+    /* background-color: red; */
     width: 30%;
+}
+
+.filter-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    list-style: none;
+}
+
+.filter-recipes {
+    /* background-color: red; */
     padding: 10px;
 }
 
@@ -31,7 +41,7 @@ button {
     color: #000000;
     cursor: pointer;
     font-size: 1.25rem;
-    background-color: blue;
+    /* background-color: blue; */
 }
 
 .filter-recipes button:hover {
@@ -46,13 +56,13 @@ button {
 }
 
 .search-show-recipes {
-    background-color: green;
+    /* background-color: green; */
     width: 70%;
     padding: 10px;
 }
 
 .search-bar {
-    background-color: orange;
+    /* background-color: orange; */
     margin-bottom: -20px;
 }
 
@@ -81,16 +91,43 @@ button {
 }
 
 .catalog-tabs {
-    background-color:blueviolet;
+    /* background-color:blueviolet; */
     width: 100%;
     height: 50px;
+    position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .catalog-tabs button {
-    /* background: transparent; */
+    background: transparent;
     border: none;
     cursor: pointer;
-    background-color: aqua;
+    /* background-color: aqua; */
     padding: 10px 20px;
-    font-size: 1rem;
+    font-size: 1.25rem;
+    position: relative;
+    z-index: 1;
+}
+
+.catalog-tabs ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.catalog-tabs ul li {
+    display: inline-block;
+}
+
+.tab-underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    width: 100px;
+    background: #3ab795;
+    border-radius: 9999px;
+    transition: all 0.3s ease;
 }
