@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../Styles/main.css">
     <link rel="stylesheet" href="../Styles/searchbar.css">
     <script src="../JS/remove_food.js" defer></script>
+    <script src="../JS/searchbar_tab_indicator.js" defer></script>
     <title>MIDDA</title>
 </head>
 <body>
@@ -91,13 +92,38 @@
         </div>
     </div>
 
-    <div class="search-filter">
-        <div class="filter-recipes" id="closed">
-            <button>
-                <span>Type rett</span>
-                <img src="../Icons/expand-arrow.png" alt="Arrow Down">
-            </button>
+    <div class="search-filter-container">
+        <div class="filter-container">
+            <ul class = "filter-list">
+                <li>
+                    <div class="filter-recipes" id="closed">
+                        <button>
+                            <span>Type rett</span>
+                            <img src="../Icons/expand-arrow.png" alt="Arrow Down">
+                        </button>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="filter-recipes" id="closed">
+                        <button>
+                            <span>Test 1</span>
+                            <img src="../Icons/expand-arrow.png" alt="Arrow Down">
+                        </button>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="filter-recipes" id="closed">
+                        <button>
+                            <span>Test 2</span>
+                            <img src="../Icons/expand-arrow.png" alt="Arrow Down">
+                        </button>
+                    </div>
+                </li>
+            </ul>
         </div>
+
         <div class="search-show-recipes">
             <div class="search-bar">
                 <input type="text" placeholder="Søk i oppskrifter">
@@ -109,8 +135,11 @@
             </div>
 
             <div class="catalog-tabs">
-                <button>Forslag</button>
-                <button>Nylige oppskrifter</button>
+                <ul>
+                    <li><button class="tab active">Forslag</button></li>
+                    <li><button class="tab">Nylige oppskrifter</button></li>
+                </ul>
+                <span class="tab-underline"></span>
             </div>
         </div>
     </div>
