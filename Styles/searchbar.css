@@ -10,11 +10,11 @@ button {
     padding: 20px;
     border-radius: 16px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    height: 800px;
+    height: fit-content;
 }
 
 .filter-container {
-    background-color: red;
+    /* background-color: red; */
     width: 30%;
 }
 
@@ -41,7 +41,7 @@ button {
     color: #000000;
     cursor: pointer;
     font-size: 1.25rem;
-    background-color: blue;
+    /* background-color: blue; */
 }
 
 .filter-recipes button:hover {
@@ -56,13 +56,13 @@ button {
 }
 
 .search-show-recipes {
-    background-color: green;
+    /* background-color: green; */
     width: 70%;
     padding: 10px;
 }
 
 .search-bar {
-    background-color: orange;
+    /* background-color: orange; */
     margin-bottom: -20px;
 }
 
@@ -91,7 +91,7 @@ button {
 }
 
 .catalog-tabs {
-    background-color:blueviolet;
+    /* background-color:blueviolet; */
     width: 100%;
     height: 50px;
     position: relative;
@@ -103,7 +103,7 @@ button {
     background: transparent;
     border: none;
     cursor: pointer;
-    background-color: aqua;
+    /* background-color: aqua; */
     padding: 10px 20px;
     font-size: 1.25rem;
     position: relative;
@@ -130,4 +130,39 @@ button {
     background: #3ab795;
     border-radius: 9999px;
     transition: all 0.3s ease;
+}
+
+.search-results {
+    /* background-color: crimson; */
+    width: 100%;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.search-results div {
+    /* background-color: cadetblue; */
+    margin: 20px 10px 40px 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    transition: 0.3s ease;
+}
+
+.search-results div:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+    cursor: pointer;
+}
+
+.search-results img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.search-results h2 {
+    text-indent: 5px;
+    font-family: "Gill Sans MT", sans-serif;
 }
