@@ -1,7 +1,9 @@
-function removeFoodItem(event) {
+export let removedFoodItems = [];
+
+export function removeFoodItem(event) {
     event.preventDefault();
 
-    const itemToRemove = event.target.closest('.calender_item');
+    const itemToRemove = event.target.closest('.calendar_item');
     itemToRemove.setAttribute("data-pending-delete", "true");
 
     document.getElementById("overlay").classList.add("active");
@@ -11,32 +13,60 @@ function removeFoodItem(event) {
 function hideConfirmBox() {
     document.getElementById("overlay").classList.remove("active");
     document.getElementById("confirm-delete").classList.remove("active");
+    
 
-    const pending = document.querySelector(".calender_item[data-pending-delete]");
+    const pending = document.querySelector(".calendar_item[data-pending-delete]");
     if (pending) pending.removeAttribute("data-pending-delete");
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    document.querySelector(".confirm-btn").addEventListener("click", () => {
-        const pending = document.querySelector(".calender_item[data-pending-delete]");
 
-        let emptyItem = `
-        <div class = "calender_item" id = "empty">
-            <div class="add_icon"></div>
-            <div class="day">
-                <p>${pending.querySelector(".day p").textContent}</p>
-            </div>
-        </div>
-        `;
-        
-        if (pending) {
-            pending.outerHTML = emptyItem;
-        };
-        hideConfirmBox();
-    })
+    document.querySelectorAll(".remove-item").forEach((btn) => {
+        btn.addEventListener("click", removeFoodItem);
+    });
 
-    document.querySelector(".cancel-btn").addEventListener("click", hideConfirmBox);
+    const confirmBtn = document.querySelector(".confirm-btn");
+    if (confirmBtn) {
+        confirmBtn.addEventListener("click", () => {
+            const pending = document.querySelector(".calendar_item[data-pending-delete]");
 
-    // Click outside closes the pop up
-    document.getElementById("overlay").addEventListener("click", hideConfirmBox);
-})
+            if (pending) {
+
+                const temp = document.createElement('div');
+                temp.innerHTML = `
+                <div class = "calendar_item" id = "empty">
+                    <button class="add-empty">
+                    <div class="add_icon"></div>
+                    <div class="day">
+                        <p>${pending.querySelector(".day p").textContent}</p>
+                    </div>
+                    </button>
+                </div>
+                `;
+            
+                const newItem = temp.firstElementChild;
+
+                const addBtn = newItem.querySelector(".add-empty");
+                addBtn.addEventListener("click", () => {
+                    document.querySelector(".search-filter-container").scrollIntoView({ behavior: 'smooth' })
+                });
+
+                removedFoodItems.push(pending);
+                pending.replaceWith(newItem);
+            }
+
+            hideConfirmBox();
+            console.log(removedFoodItems);
+        });
+    }
+
+    const cancelBtn = document.querySelector(".cancel-btn");
+    if (cancelBtn) {
+        cancelBtn.addEventListener("click", hideConfirmBox);
+    }
+
+    const overlay = document.getElementById("overlay");
+    if (overlay) {
+        overlay.addEventListener("click", hideConfirmBox);
+    }
+});

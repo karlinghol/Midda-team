@@ -6,15 +6,15 @@ button {
     display: flex;
     justify-content: space-between;
     background-color: #ffffff;
-    margin: 20px 200px 0 200px;
+    margin: 40px 200px 0 200px;
     padding: 20px;
     border-radius: 16px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    height: 1000px;
+    height: 800px;
 }
 
 .filter-container {
-    /* background-color: red; */
+    background-color: red;
     width: 30%;
 }
 
@@ -41,7 +41,7 @@ button {
     color: #000000;
     cursor: pointer;
     font-size: 1.25rem;
-    /* background-color: blue; */
+    background-color: blue;
 }
 
 .filter-recipes button:hover {
@@ -56,13 +56,13 @@ button {
 }
 
 .search-show-recipes {
-    /* background-color: green; */
+    background-color: green;
     width: 70%;
     padding: 10px;
 }
 
 .search-bar {
-    /* background-color: orange; */
+    background-color: orange;
     margin-bottom: -20px;
 }
 
@@ -91,7 +91,7 @@ button {
 }
 
 .catalog-tabs {
-    /* background-color:blueviolet; */
+    background-color:blueviolet;
     width: 100%;
     height: 50px;
     position: relative;
@@ -103,7 +103,7 @@ button {
     background: transparent;
     border: none;
     cursor: pointer;
-    /* background-color: aqua; */
+    background-color: aqua;
     padding: 10px 20px;
     font-size: 1.25rem;
     position: relative;

@@ -42,7 +42,7 @@ body {
     grid-template-columns: repeat(3, 280px);
 }
 
-.calender_item {
+.calendar_item {
     background-color: #ffffff;
     border-radius: 16px;
     flex: 0 0 280px;
@@ -56,13 +56,13 @@ body {
     position: relative;
 }
 
-.calender_item h2 {
+.calendar_item h2 {
     font-size: 1.2rem;
     font-weight: 600;
     margin: 8px 0 2px 8px;
 }
 
-.calender_item p {
+.calendar_item p {
     margin: 0 0 8px 8px;
     font-size: 0.95rem;
     color: #666;
@@ -83,7 +83,7 @@ body {
     text-align: left;
 }
 
-.calender_item:hover {
+.calendar_item:hover {
     transform: translateY(-4px);
     box-shadow: 0 6px 14px rgba(0,0,0,0.12);
     cursor: pointer;
@@ -108,7 +108,7 @@ body {
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.calender_item:hover .remove-item {
+.calendar_item:hover .remove-item {
     opacity: 1;
     transform: scale(1);
 }
@@ -203,6 +203,15 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+#empty button {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    border-radius: inherit;
+    cursor: pointer;
 }
 
 .add_icon {

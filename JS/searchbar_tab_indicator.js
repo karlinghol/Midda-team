@@ -1,5 +1,6 @@
 const tabs = document.querySelectorAll(".catalog-tabs .tab");
 const underline = document.querySelector(".catalog-tabs .tab-underline");
+const searchResults = document.querySelector(".search-results");
 
 function moveUnderline(el) {
     const tabRect = el.getBoundingClientRect();
@@ -14,6 +15,9 @@ tabs.forEach(tab => {
     tab.addEventListener("click", () => {
         tabs.forEach(t => t.classList.remove("active"));
         tab.classList.add("active");
+        searchResults.setAttribute("data-active-tab", tab.textContent.split(" ")[0]);
+
+        console.log(searchResults);
         moveUnderline(tab);
     });
 });

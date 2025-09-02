@@ -5,8 +5,9 @@
     <link rel="stylesheet" href="../Styles/menubar.css">
     <link rel="stylesheet" href="../Styles/main.css">
     <link rel="stylesheet" href="../Styles/searchbar.css">
-    <script src="../JS/remove_food.js" defer></script>
-    <script src="../JS/searchbar_tab_indicator.js" defer></script>
+    <script type="module" src="../JS/remove_food.js"></script>
+    <script type="module" src="../JS/searchbar_tab_indicator.js"></script>
+    <script type="module" src="../JS/recent_recipes.js"></script>
     <title>MIDDA</title>
 </head>
 <body>
@@ -25,8 +26,8 @@
 
     <div class="container"> <!-- The start of the calendar container-->
         <div class="upper-row"> <!-- The start of the upper row of calendar items-->
-            <div class = "calender_item">
-                <button class="remove-item" onclick="removeFoodItem(event)"></button> <!-- All remove buttons activate the same function inside of the remove_food.js file -->
+            <div class = "calendar_item">
+                <button class="remove-item"></button> <!-- All remove buttons activate the same function inside of the remove_food.js file -->
                 <img src="../Images/kylling_burger.jpg" alt="Kyllingburger">
                 <h2>Kyllingburger</h2>
                 <p>129kr</p>
@@ -34,22 +35,22 @@
                     <p>Mandag</p>
                 </div>
             </div>
-            <div class = "calender_item">
-                <button class="remove-item" onclick="removeFoodItem(event)"></button>
+            <div class = "calendar_item">
+                <button class="remove-item"></button>
                 <img src="../Images/hamburger.jpg" alt="Hamburger">
                 <div class="day">
                     <p>Tirsdag</p>
                 </div>
             </div>
-            <div class = "calender_item">
-                <button class="remove-item" onclick="removeFoodItem(event)"></button>
+            <div class = "calendar_item">
+                <button class="remove-item" ></button>
                 <img src="../Images/kabuli_pulao.jpg" alt="Kabuli Pulao">
                 <div class="day">
                     <p>Onsdag</p>
                 </div>
             </div>
-            <div class = "calender_item">
-                <button class="remove-item" onclick="removeFoodItem(event)"></button>
+            <div class = "calendar_item">
+                <button class="remove-item" ></button>
                 <img src="../Images/kebab_i_pita.jpg" alt="Kebab i Pita">
                 <div class="day">
                         <p>Torsdag</p>
@@ -58,22 +59,22 @@
         </div> <!-- The end of the upper row of calendar items-->
 
         <div class ="bottom-row"> <!-- The start of the bottom row of calendar items-->
-            <div class = "calender_item">
-                <button class="remove-item" onclick="removeFoodItem(event)"></button>
+            <div class = "calendar_item">
+                <button class="remove-item" ></button>
                 <img src="../Images/laks_i_ovn.jpg" alt="Laks i Ovn">
                 <div class="day">
                         <p>Fredag</p>
                 </div>
             </div>
-            <div class = "calender_item">
-                <button class="remove-item" onclick="removeFoodItem(event)"></button>
+            <div class = "calendar_item">
+                <button class="remove-item" ></button>
                 <img src="../Images/lasagne.jpg" alt="Lasagne">
                 <div class="day">
                         <p>Lørdag</p>
                 </div>
             </div>
-            <div class = "calender_item">
-                <button class="remove-item" onclick="removeFoodItem(event)"></button>
+            <div class = "calendar_item">
+                <button class="remove-item" ></button>
                 <img src="../Images/spaghetti_carbonara.jpeg" alt="Spaghetti Carbonara">
                 <div class="day">
                         <p>Søndag</p>
@@ -138,8 +139,13 @@
                 <ul>
                     <li><button class="tab active">Forslag</button></li>
                     <li><button class="tab">Nylige oppskrifter</button></li>
+                    <li><button class="tab">Alle oppskrifter</button></li>
                 </ul>
                 <span class="tab-underline"></span>
+            </div>
+
+            <div class="search-results">
+
             </div>
         </div>
     </div>
