@@ -57,6 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             hideConfirmBox();
             console.log(removedFoodItems);
+            console.log(removedFoodItems[0]);
         });
     }
 
